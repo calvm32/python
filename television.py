@@ -47,4 +47,4 @@ class Television:
         displayVolume = self.__volume
         if self.__muted == True:
             displayVolume = 0
-        return f'Power=[{self.__status}], Channel=[{self.__channel}], Volume=[{displayVolume}]'
+        return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {displayVolume}'
