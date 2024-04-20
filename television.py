@@ -13,7 +13,7 @@ class Television:
     MIN_CHANNEL = 0
     MAX_CHANNEL = 3
     
-    def __init__(self):
+    def __init__(self) -> None:
         '''
         Television constructor to initialize a television object.
         '''
@@ -22,20 +22,20 @@ class Television:
         self.__volume = Television.MIN_VOLUME
         self.__channel = Television.MIN_CHANNEL
 
-    def power(self):
+    def power(self) -> None:
         '''
         Toggles between television on and off.
         '''
         self.__status = not self.__status
     
-    def mute(self):
+    def mute(self) -> None:
         '''
         When power is on, toggles between television muted and not.
         '''
         if self.__status == True:
             self.__muted = not self.__muted
     
-    def channel_up(self):
+    def channel_up(self) -> None:
         '''
         When power is on, increases channel by 1.
         Goes from max channel value down to min channel value.
@@ -46,7 +46,7 @@ class Television:
             else:
                 self.__channel += 1
     
-    def channel_down(self):
+    def channel_down(self) -> None:
         '''
         When power is on, decreases channel by 1.
         Goes from min channel value up to max channel value.
@@ -57,7 +57,7 @@ class Television:
             else:
                 self.__channel -= 1
     
-    def volume_up(self):
+    def volume_up(self) -> None:
         '''
         When power is on, sets television to unmute and increases volume by 1.
         Will not increase past max volume.
@@ -67,7 +67,7 @@ class Television:
             if self.__volume != Television.MAX_VOLUME:
                 self.__volume += 1
     
-    def volume_down(self):
+    def volume_down(self) -> None:
         '''
         When power is on, sets television to unmute and decreases volume by 1.
         Will not decrease past min volume.
@@ -77,7 +77,7 @@ class Television:
             if self.__volume != Television.MIN_VOLUME:
                 self.__volume -= 1
 
-    def __str__(self):
+    def __str__(self) -> str:
         '''
         Displays power, channel, and volume in the format 
         'Power = [power], Channel = [channel], Volume = volume'.
