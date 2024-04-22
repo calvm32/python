@@ -1,4 +1,8 @@
-class Television(MIN_VOLUME = 0, MAX_VOLUME = 2, MIN_CHANNEL = 0, MAX_CHANNEL = 3):
+class Television():
+    MIN_VOLUME = 0
+    MAX_VOLUME = 2
+    MIN_CHANNEL = 0
+    MAX_CHANNEL = 3
     
     def __init__(self):
         self.__status = False
@@ -42,5 +46,5 @@ class Television(MIN_VOLUME = 0, MAX_VOLUME = 2, MIN_CHANNEL = 0, MAX_CHANNEL = 
     def __str__(self):
         displayVolume = self.__volume
         if self.__muted == True:
-            displayVolume = 0
+            displayVolume = Television.MIN.VOLUME
         return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {displayVolume}'
