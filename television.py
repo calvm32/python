@@ -1,18 +1,17 @@
 '''
 Module for "Television" class.
 '''
-class Television:
-
+class Television():
     '''
     Class to represent television details.
     Initial values specified for min/max volume and min/max channel.
     '''
-
+    
     MIN_VOLUME = 0
     MAX_VOLUME = 2
     MIN_CHANNEL = 0
     MAX_CHANNEL = 3
-    
+
     def __init__(self) -> None:
         '''
         Television constructor to initialize a television object.
@@ -79,11 +78,10 @@ class Television:
 
     def __str__(self) -> str:
         '''
-        Displays power, channel, and volume in the format 
-        'Power = [power], Channel = [channel], Volume = volume'.
-        Note when telivision is muted, displayed volume is 0 regardless of volume value.
+        Displays television state. Note when telivision is muted, displayed volume is 0 regardless of volume value.
+        :return: A string representing the television state in the format 'Power = [power], Channel = [channel], Volume = volume'.
         '''
         displayVolume = self.__volume
         if self.__muted == True:
-            displayVolume = 0
+            displayVolume = Television.MIN.VOLUME
         return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {displayVolume}'
